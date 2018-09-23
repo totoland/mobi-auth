@@ -7,15 +7,24 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { NavigationActions } from 'react-navigation';
+import PropTypes from 'prop-types';
+
+
+const util = require('util');
 
 export default class ControlPanel extends Component {
 
   constructor(props){
     super(props);
+    console.log("print props............");
+    console.log(props);
   }
 
   render() {
-    const profileImgUri = "https://antiqueruby.aliansoftware.net//Images/social/ic_msg_user01_s21_29.jpg";
+    const profileImgUri = "https://totodev.com/port/img/profile.png";
+    const _onPressCheckIn = this.props.goToEC;
+      
     return (
       <Container style={styles.menuContainer}>
         <Header style={styles.menuheaderSec}>
@@ -35,8 +44,8 @@ export default class ControlPanel extends Component {
           <View style={styles.userProfiles}>
              <Image source={{uri:profileImgUri}} style={styles.userImageStyle}/>
              <View style={styles.userDetailsStyle}>
-               <Text style={styles.userDetailsText}>John</Text>
-               <Text style={styles.userDetailsText}>Seattle, USA</Text>
+               <Text style={styles.userDetailsText}>Toto</Text>
+               <Text style={styles.userDetailsText}>Bangkok, Thailand</Text>
              </View>
           </View>
 
@@ -47,7 +56,7 @@ export default class ControlPanel extends Component {
                 <Text style={styles.rowtxt}>Home</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => alert('Articles')} >
+            <TouchableOpacity onPress={() => alert('Meeting')} >
               <View style={styles.listrow}>
                 <MaterialCommunityIcons name="file" color="#ffffff" size={20} />
                 <Text style={styles.rowtxt}>Articles</Text>
@@ -64,21 +73,21 @@ export default class ControlPanel extends Component {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => alert('Activity')} >
+            <TouchableOpacity onPress={() => _onPressCheckIn()} >
               <View style={styles.listrow}>
-                <SimpleLineIcons name="bell" color='#ffffff' size={20} />
-                <Text style={styles.rowtxt}>Activity</Text>
+                <SimpleLineIcons name="location-pin" color='#ffffff' size={20} />
+                <Text style={styles.rowtxt}>Check-in</Text>
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => alert('Favourite')} >
+            {/* <TouchableOpacity onPress={() => alert('Favourite')} >
               <View style={styles.listrow}>
                 <FontAwesome name="star" color='#ffffff' size={20} />
                 <Text style={styles.rowtxt}>Favourite</Text>
               </View>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
-            <TouchableOpacity onPress={() => alert('Friends')} >
+            <TouchableOpacity onPress={() => alert('People')} >
               <View style={styles.listrow}>
                 <SimpleLineIcons name="people" color='#ffffff' size={20} />
                 <Text style={styles.rowtxt}>Friends</Text>
@@ -102,3 +111,9 @@ export default class ControlPanel extends Component {
   }
 
 }
+
+
+ControlPanel.propTypes = {
+  goToEC: PropTypes.func
+}
+

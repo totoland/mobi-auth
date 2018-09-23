@@ -50,8 +50,8 @@ export default class ControlPanel extends Component {
 
             <TouchableOpacity onPress={() => alert('Activity')} >
               <View style={styles.listrow}>
-                <SimpleLineIcons name="bell" color='#ffffff' size={20} />
-                <Text style={styles.rowtxt}>Activity</Text>
+                <SimpleLineIcons name="location-pin" color='#ffffff' size={20} />
+                <Text style={styles.rowtxt}>Check-in</Text>
               </View>
             </TouchableOpacity>
 

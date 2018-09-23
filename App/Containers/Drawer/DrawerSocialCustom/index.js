@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Platform, TouchableOpacity,BackHandler, I18nManager } from 'react-native';
+import { View, Text, StyleSheet, Platform, TouchableOpacity,BackHandler, I18nManager,AsyncStorage } from 'react-native';
 import { Container, Content, Button, Icon, Right, Item, Input, Header, Left, Body, Title} from 'native-base';
 const drawerStyles = {
   drawer: {
@@ -39,10 +39,11 @@ export default class DrawerSocialCustom extends Component {
       side: "left",
     };
   }
+  
   componentWillMount(){
     setTimeout(() => {this.drawer.open()}, 1000);
     var that = this
-      BackHandler.addEventListener('hardwareBackPress', function() {
+          BackHandler.addEventListener('hardwareBackPress', function() {
             that.props.navigation.navigate('Drawer')
            return true;
       });
@@ -73,7 +74,7 @@ export default class DrawerSocialCustom extends Component {
   }
 
   render(){
-    var controlPanel = <MyControlPanel closeDrawer={() => {
+    var controlPanel = <MyControlPanel goToEC={()=>this.props.navigation.navigate("DrawerStackAntiqueruby")} closeDrawer={() => {
       this.drawer.close();
     }} />
     return (
@@ -111,7 +112,7 @@ export default class DrawerSocialCustom extends Component {
     								</TouchableOpacity>
     							</Left>
     							<Body style={styles.body}>
-    								<Text style={styles.textTitle}>Drawer Social Custom</Text>
+    								<Text style={styles.textTitle}>Check-in</Text>
     							</Body>
     							<Right style={styles.right}>
                     <TouchableOpacity  onPress={()=>this.props.navigation.navigate('Drawer')} style={styles.backArrow}>
