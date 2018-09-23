@@ -22,13 +22,12 @@ export default class ControlPanel extends Component {
   }
 
   _onPress(){
-    alert('check in');
     Actions.checkInScreen();
   }
 
   render() {
     const profileImgUri = "https://totodev.com/port/img/profile.png";
-    const _onPressCheckIn = this.props.goToEC;
+    // const _onPressCheckIn = this.props.goToEC;
 
     return (
       <Container style={styles.menuContainer}>
@@ -118,7 +117,7 @@ export default class ControlPanel extends Component {
 }
 
 
-ControlPanel.propTypes = {
-  goToEC: PropTypes.func
-}
+// ControlPanel.propTypes = {
+//   goToEC: PropTypes.func
+// }
 

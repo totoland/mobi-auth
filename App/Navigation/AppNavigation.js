@@ -512,7 +512,8 @@ const PrimaryNav = StackNavigator(
     DrawerStackAntiqueruby: { screen: DrawerNavigationAntiqueruby },
     DrawerStackECommerce: { screen: DrawerNavigationWoocommerce },
     DrawerStackBlog: { screen: DrawerNavigationBlog },
-    DrawerStackLogin: { screen: Drawer_03 }
+    // DrawerStackLogin: { screen: Drawer_03 }
+    DrawerStackLogin: { screen: DrawerNavigationLogin }
   },
   {
     headerMode: "none",

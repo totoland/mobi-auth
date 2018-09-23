@@ -41,6 +41,7 @@ export default class DrawerSocialCustom extends Component {
   }
   
   componentWillMount(){
+    console.log("componentWillMount");
     setTimeout(() => {this.drawer.open()}, 1000);
     var that = this
           BackHandler.addEventListener('hardwareBackPress', function() {
@@ -48,6 +49,19 @@ export default class DrawerSocialCustom extends Component {
            return true;
       });
   }
+
+  componentDidMount(){
+    console.log("componentDidMount");
+  }
+
+  componentDidCatch(){
+    console.log("componentDidCatch");
+  }
+
+  componentWillUpdate(){
+    console.log("componentWillUpdate");
+  }
+
   setDrawerType(type){
     this.setState({
       drawerType: type

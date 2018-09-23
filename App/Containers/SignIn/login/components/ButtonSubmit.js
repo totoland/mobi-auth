@@ -48,10 +48,11 @@ export default class ButtonSubmit extends Component {
 
     setTimeout(() => {
       Actions.mainScreen();
+      // this.props.navigration.navigrate("Drawer_03");
       this.setState({isLoading: false});
       this.buttonAnimated.setValue(0);
       this.growAnimated.setValue(0);
-    }, 2300);
+    }, 200);
   }
 
   _onGrow() {

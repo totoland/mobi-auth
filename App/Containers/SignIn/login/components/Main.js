@@ -3,6 +3,7 @@ import { Router, Scene, Actions, ActionConst } from 'react-native-router-flux';
 
 import LoginScreen from './LoginScreen';
 import DrawerSocialCustom from '../../../Drawer/DrawerSocialCustom/index';
+import checkIn from "../../../Drawer/Checkin/CheckInUI.js";
 
 export default class Main extends Component {
   render() {
@@ -16,12 +17,18 @@ export default class Main extends Component {
 	          initial={true}
 	        />
 	        <Scene key="mainScreen"
-	          component={DrawerSocialCustom}
+	          component={checkIn}
+	          animation='fade'
+	          hideNavBar={true}
+	        />
+					<Scene key="checkInScreen"
+	          component={checkIn}
 	          animation='fade'
 	          hideNavBar={true}
 	        />
 	      </Scene>
-	    </Router>
+			</Router>
+			// <LoginScreen></LoginScreen>
 	  );
 	}
 }
